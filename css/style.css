@@ -14,6 +14,23 @@ body {
   background: white;
   color: black;
 }
+
+#title {
+  text-align: center;
+  font-size: 30px;
+
+}
+
+#poster {
+  visibility: hidden;
+  padding: 20px;
+  margin-top: 15px;
+  border: 1px solid grey;
+margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
 h1 {
   text-align: center;
   font-family: "Bungee shade", cursive;
