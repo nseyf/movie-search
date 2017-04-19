@@ -1,15 +1,19 @@
 
 $('#searchForFilm').click(function(){
+ 
+ // When the users clicks the button after entering a string that string is stored in the input variable that is then used to query the APIs
  var input = document.getElementById('userInput').value;
   /* Film Info */
   $.getJSON('https://www.omdbapi.com/?t=' + input + "&y=&plot=full", function(data) {
     if(input = data.Title) {  
+ // If the string is a valid title the result fields are populated by the corresponding JSON data
     $('#title').html(data.Title);
     $('#releaseyear').html("Released in " + data.Year);
     $('#synopsis').html(data.Plot);
     $('#starring').html("Starring: " + data.Actors);
     $('#Meta').html("Metascore: " + data.Metascore)
     } else {
+ // If the string is invalid or empty the user is alerted and the different result fields are emptied
       $('#title').html("Sorry, we weren't able to find the film you were looking for. Maybe you made a mistake?");
       $('#releaseyear').html("");
       $('#starring').html("");
